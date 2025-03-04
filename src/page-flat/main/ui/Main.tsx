@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Card from "@/shared/card/Card";
+import Btn from "@/shared/button/Btn";
+import Project from "./Project";
+import Introduce from "./Introduce";
 
 const Banner = styled.section`
   width: 100%;
@@ -38,26 +41,35 @@ const CardWrapper = styled.div`
 `;
 const Desc = styled.p`
   max-width: 570px;
-  text-align:center;
+  text-align: center;
+  margin-bottom: 40px;
 `;
-const Line =styled.div`
- width:80%;
- height:1px;
-`
+const Line = styled.div`
+  width: 80%;
+  height: 1px;
+  background-color: #000;
+  margin-bottom: 40px;
+  margin-top: 40px;
+`;
 function Main() {
   return (
-    <Banner>
-      <CardWrapper>
-        <Card />
-      </CardWrapper>
-      <P>PORTFOLIO</P>
-      <Desc>
-        This portfolio is a testament to Syuzzang&apos;s dedication to crafting
-        exceptional digital experiences Where Each website is a result of
-        countless hours of design finesse and meticulous development
-      </Desc>
-      <Line></Line>
-    </Banner>
+    <>
+      <Banner>
+        <CardWrapper>
+          <Card />
+        </CardWrapper>
+        <P>PORTFOLIO</P>
+        <Desc>
+          This portfolio is a testament to Syuzzang&apos;s dedication to
+          crafting exceptional digital experiences Where Each website is a
+          result of countless hours of design finesse and meticulous development
+        </Desc>
+        <Btn text="Navigate" hoverText="Navigate" variant="secondary" />
+        <Line />
+      </Banner>
+      <Project />
+      <Introduce></Introduce>
+    </>
   );
 }
 

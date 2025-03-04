@@ -4,6 +4,7 @@ import StyledComponentsRegistry from "./registry";
 import { theme } from "@/shared/styles/theme";
 import { GlobalStyle } from "@/shared/styles/global";
 import Header from "@/shared/header/Header";
+import Footer from "@/shared/footer/Footer";
 
 
 export default function RootLayout({
@@ -19,6 +20,7 @@ export default function RootLayout({
             <GlobalStyle />
             <Header/>
             {children}
+            <Footer></Footer>
           </ThemeProvider>
         </StyledComponentsRegistry>
       </body>

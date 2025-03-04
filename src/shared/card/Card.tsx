@@ -68,7 +68,7 @@ function Card() {
   return (
     <CardWrapper>
       <CardHeader>
-        <span>WHO IS Syuzzang</span>
+        <span>WHO IS SYUZZANG</span>
       </CardHeader>
       <CardContent>
         <p>
