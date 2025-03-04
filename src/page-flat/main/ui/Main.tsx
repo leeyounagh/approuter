@@ -52,7 +52,7 @@ function Main() {
       </CardWrapper>
       <P>PORTFOLIO</P>
       <Desc>
-        This portfolio is a testament to Syuzzang's dedication to crafting
+        This portfolio is a testament to Syuzzang&apos;s dedication to crafting
         exceptional digital experiences Where Each website is a result of
         countless hours of design finesse and meticulous development
       </Desc>

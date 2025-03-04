@@ -72,7 +72,7 @@ function Card() {
       </CardHeader>
       <CardContent>
         <p>
-          Passionate Frontend Developer who always thinks from the user's
+          Passionate Frontend Developer who always thinks from the user&apos;s
           perspective
         </p>
 
