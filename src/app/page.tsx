@@ -1,10 +1,12 @@
 "use client"
-import Header from "@/shared/header/Header";
+import Main from "@/page-flat/main/ui/Main";
+
 export default function Home() {
   return (
     <div>
-      <Header></Header>
-      <main></main>
+      <main>
+        <Main/>
+      </main>
     </div>
   );
 }

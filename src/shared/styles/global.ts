@@ -45,4 +45,18 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 150%;
     
   }
+
+@font-face {
+  font-family: 'Sigmar';
+  src: url('/font/Sigmar-Regular.ttf') format('truetype'); /* 'ttf' → 'truetype' */
+  font-weight: normal;
+  font-style: normal;
+}
+ @font-face {
+  font-family: 'Thunder';
+  src: url('/font/Thunder-BoldLC.woff2') format('woff2'); /* 'woff2'로 수정 */
+  font-weight: bold; /* 'Thunder-BoldLC'이므로 bold로 설정 */
+  font-style: normal;
+}
+
 `;
