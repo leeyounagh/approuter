@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { media } from "@/shared/styles/mixin";
-import useMediaQuery from "../lib/useMediaquery";
+
 
 const CardWrapper = styled.div`
   will-change: transform;
