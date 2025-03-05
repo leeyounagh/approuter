@@ -43,6 +43,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     font-weight: 400;
     line-height: 150%;
+    overflow-x:hidden;
     
   }
 

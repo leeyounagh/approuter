@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import useMediaQuery from "@/shared/lib/useMediaquery";
+import { media } from "@/shared/styles/mixin";
 
 const Layout = styled.section`
   background-color: #000;
@@ -10,7 +12,7 @@ const Layout = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom:1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 `;
 
 const Desc = styled.p`
@@ -18,6 +20,9 @@ const Desc = styled.p`
   text-align: center;
   text-transform: uppercase;
   color: white;
+  ${media.mobileM`
+      font-size: 10px;
+  `}
 `;
 
 const ImageDiv = styled.div`
@@ -37,9 +42,13 @@ const DESC2 = styled.p`
   font-size: 150px;
   font-weight: 600;
   line-height: 80%;
-  padding-top:249px;
+  padding-top: 249px;
+  ${media.mobileM`
+     font-size: 100px;
+  `}
 `;
 function Introduce() {
+  const isSmallScreen = useMediaQuery("(max-width: 640px)");
   return (
     <Layout>
       <Desc>
@@ -51,14 +60,14 @@ function Introduce() {
         <Image
           src="https://cdn.prod.website-files.com/64c7878ea5e3e133429ab757/64e6096eb6292fb6b706b0b5_Frame%201000003297.svg"
           alt="Introduce"
-          width={226}
-          height={223}
+          width={isSmallScreen ? 126 : 226}
+          height={isSmallScreen ? 123 : 223}
         />
         <Image
           src="https://cdn.prod.website-files.com/64c7878ea5e3e133429ab757/64e6095fb5e49f8139526639_Frame%201000004076.svg"
           alt="Introduce"
-          width={226}
-          height={223}
+          width={isSmallScreen ? 126 : 226}
+          height={isSmallScreen ? 123 : 223}
         />
       </ImageDiv>
       <DESC2>Creativity and Innovation in Web Design</DESC2>

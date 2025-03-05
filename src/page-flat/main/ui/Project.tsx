@@ -1,12 +1,14 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { media } from "@/shared/styles/mixin";
+
 
 const Layout = styled.section`
   background-color: #000;
   width: 100%;
   padding-top: 75px;
   padding-bottom: 75px;
-  border-bottom:1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 `;
 
 const scrollText = keyframes`
@@ -33,6 +35,15 @@ const InfiniteText = styled.p`
   cursor: pointer;
   overflow: hidden;
   height: 300px;
+  ${media.tabletL`
+     font-size: 180px;
+    `}
+
+  ${media.mobileS`
+     font-size: 100px;
+      height: 200px;
+    `}
+
 
   &:hover {
     color: transparent;
@@ -52,6 +63,13 @@ const InfiniteText = styled.p`
     transform: translateY(-50%);
     opacity: 0;
     animation: ${scrollText} 10s linear infinite;
+    ${media.tabletL`
+     font-size: 180px;
+    `}
+    
+  ${media.mobileS`
+     font-size: 100px;
+    `}
   }
 
   &:hover::before {

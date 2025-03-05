@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { media } from "@/shared/styles/mixin";
+import useMediaQuery from "../lib/useMediaquery";
 
 const CardWrapper = styled.div`
   will-change: transform;
@@ -13,6 +15,8 @@ const CardWrapper = styled.div`
   overflow: hidden;
   color: white;
   padding: 16px;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     transform: translate3d(0%, -5%, 0) scale3d(1.05, 1.05, 1) rotateZ(5deg);
@@ -25,9 +29,18 @@ const CardHeader = styled.div`
   gap: 10px;
   font-size: 18px;
   font-weight: bold;
+
+  ${media.tabletL`
+     font-size: 14px;
+    `}
+  ${media.tabletS`
+     font-size: 10px;
+    `}
+      ${media.mobileS`
+     font-size: 8px;
+    //  height:2rem;
+    `}
 `;
-
-
 
 const CardContent = styled.div`
   margin-top: 10px;
@@ -37,6 +50,14 @@ const CardContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    ${media.tabletS`
+     font-size: 12px;
+    `}
+    ${media.mobileS`
+     font-size: 8px;
+     height: 6rem;
+    margin-top: 5px;
+    `}
   }
 `;
 
@@ -46,6 +67,15 @@ const CardHeading = styled.h4`
   font-weight: 900;
   line-height: 1;
   color: #f8f527;
+  ${media.tabletL`
+     font-size: 18px;
+    `}
+  ${media.tabletS`
+     font-size: 14px;
+    `}
+      ${media.mobileS`
+     font-size: 10px;
+    `}
 `;
 
 const CardImage = styled.img`
@@ -67,10 +97,10 @@ const CardImage = styled.img`
 function Card() {
   return (
     <CardWrapper>
-      <CardHeader>
-        <span>WHO IS SYUZZANG</span>
-      </CardHeader>
       <CardContent>
+        <CardHeader>
+          <span>WHO IS SYUZZANG</span>
+        </CardHeader>
         <p>
           Passionate Frontend Developer who always thinks from the user&apos;s
           perspective

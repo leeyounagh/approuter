@@ -3,7 +3,9 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Logo from "@/shared/assets/logo.svg";
-import Btn from "@/shared/button/Btn"
+import Btn from "@/shared/button/Btn";
+import useMediaQuery from "../lib/useMediaquery";
+import { media } from "@/shared/styles/mixin";
 
 const Layout = styled.header`
   width: 100%;
@@ -14,6 +16,9 @@ const Layout = styled.header`
   background-color: black;
   margin-left: auto;
   margin-right: auto;
+  ${media.mobileS`
+       padding: 20px 20px;
+     `}
 `;
 const Wrapper = styled.nav`
   max-width: 1560px;
@@ -50,70 +55,26 @@ const MenuItem = styled.li`
 `;
 const RightNav = styled.div``;
 
-// const Btn = styled.button`
-//   cursor: pointer;
-//   color: black;
-//   background-color: white;
-//   font-weight: 600;
-//   border-radius: 8.75px;
-//   flex: 0 auto;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 16px 22px;
-//   position: relative;
-//   overflow: hidden;
-//   height: 50px;
-//   width: 120px;
-
-//   span {
-//     display: inline-block;
-//     position: absolute;
-//     left: 50%;
-//     transform: translate3d(-50%, 0, 0);
-//     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-//     white-space: nowrap;
-//   }
-
-//   .default-text {
-//     transform: translate3d(-50%, -50%, 0);
-//     opacity: 1;
-//   }
-
-//   .hover-text {
-//     transform: translate3d(-50%, 100%, 0);
-//     opacity: 0;
-//   }
-
-//   &:hover .default-text {
-//     transform: translate3d(-50%, -100%, 0);
-//     opacity: 0;
-//   }
-
-//   &:hover .hover-text {
-//     transform: translate3d(-50%, -50%, 0);
-//     opacity: 1;
-//   }
-// `;
 function Header() {
+  const isSmallScreen = useMediaQuery("(max-width: 1024px)");
   return (
     <Layout>
       <Wrapper>
         <Image src={Logo.src} alt="logo" width={137} height={32} priority />
-        <MenuList>
-          <MenuItem>
-            SOLUTIONS <UnderLine />
-          </MenuItem>
-          <MenuItem>
-            ABOUT ME
-            <UnderLine />
-          </MenuItem>
-        </MenuList>
+        {!isSmallScreen && (
+          <MenuList>
+            <MenuItem>
+              SOLUTIONS <UnderLine />
+            </MenuItem>
+            <MenuItem>
+              ABOUT ME
+              <UnderLine />
+            </MenuItem>
+          </MenuList>
+        )}
       </Wrapper>
       <RightNav>
-        <Btn text="CONTACT" hoverText="CONTACT">
-          {/* <span className="default-text">CONTACT</span>
-          <span className="hover-text">CONTACT</span> */}
-        </Btn>
+        <Btn text="CONTACT" hoverText="CONTACT"></Btn>
       </RightNav>
     </Layout>
   );
